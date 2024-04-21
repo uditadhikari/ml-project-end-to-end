@@ -19,5 +19,5 @@ conda create -p ./venv python=3.8 -y
    To activate the existing Conda environment, run the following command:
 
 ```bash
-    conda activate ./venv
+conda activate ./venv
 ```
