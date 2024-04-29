@@ -3,8 +3,8 @@ import os
 from datetime import datetime
 
 LOG_FILE_NAME = f"{datetime.now().strftime('%m_%d_%Y_%H_%M_%S')}.log"
-
-LOG_FOLDER = os.path.join(os.getcwd(), "logs")
+LOG_FOLDER_NAME = f"{datetime.now().strftime('%m_%d_%Y')}"
+LOG_FOLDER = os.path.join(os.getcwd(), "logs", LOG_FOLDER_NAME)
 
 ## This line is creating the directory specified by log_path. 
 ## The os.makedirs() function is used to create a directory, 
@@ -19,9 +19,9 @@ LOG_FILE_PATH = os.path.join(LOG_FOLDER, LOG_FILE_NAME)
 ## The provided 'format' is the best practice for logging in python.
 logging.basicConfig(
     filename=LOG_FILE_PATH,
-    level=logging.DEBUG,
+    level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 
 if __name__ == "__main__" : 
-    logging.debug("This is a debug message")
+    logging.info("Logging has started")
